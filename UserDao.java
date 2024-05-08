@@ -1,6 +1,6 @@
 package elexnova.com.dao;
 
- interface UserDao {
+ public interface UserDao {
 	
 
 	boolean isValidUser(String name, String no, String email);

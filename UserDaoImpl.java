@@ -2,9 +2,9 @@ package elexnova.com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
-import elexnova.com.model.User;
+
 import elexnova.com.util.DbUtil;
 
 public class UserDaoImpl implements UserDao{
@@ -14,14 +14,18 @@ public class UserDaoImpl implements UserDao{
 		// TODO Auto-generated method stub
 		String query="select*from login_info where name=? and no=? and email=?";
 		try(Connection conn=DbUtil.getConnection();
+			
 			PreparedStatement pr=conn.prepareStatement(query);){
+			System.out.println(conn)	;
 			pr.setString(1, name1);
 			pr.setString(2, no1);
 			pr.setString(3, email1);
 			ResultSet resultset=pr.executeQuery();
 			System.out.println("execute");
+			
 			return resultset.next();
 		}catch(SQLException e) {
+			System.out.println("problem");
 			e.printStackTrace();
 			return false;
 		}
