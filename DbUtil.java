@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class DbUtil {
 	private static final String url="jdbc:mysql://localhost:3306/client_query";
 	private static final String username="root";
-	private static final String pass="MuskanTyagi@430";
+	private static final String pass="your password";
 	static {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
